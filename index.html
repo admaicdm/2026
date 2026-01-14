@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMA ICDM 2026 | IIT Madras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+	background-image: linear-gradient(rgba(30, 58, 58, 0.7), rgba(59, 130, 100, 0.7)), url('gc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+        }
+        
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+	.header {
+	    background-image: linear-gradient(rgba(30, 58, 58, 0.7), rgba(59, 130, 100, 0.7)), url('gc.jpg');
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	}
+
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 390px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-box {
+            background: transparent;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .logo-box img {
+            height: 160px;
+            width: auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+        }
+        
+        .date-venue {
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        nav {
+            background: #1e293b;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.2rem;
+            display: inline-block;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: #3b82f6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3b82f6;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #3b82f6;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .date-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 3px solid #8b5cf6;
+        }
+        
+        .date-item strong {
+            color: #1e3a8a;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+       
+	.speaker-card {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center; /* Center align content */
+}
+
+.speaker-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes image circular */
+    object-fit: cover; /* Maintains aspect ratio */
+    border: 4px solid #3b82f6;
+    margin: 0 auto 1rem auto; /* Center image with bottom margin */
+    display: block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.speaker-name {
+    font-weight: bold;
+    color: #1e3a8a;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.speaker-affiliation {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+        
+        .committee-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .committee-list li {
+            background: #f1f5f9;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .committee-list li strong {
+            color: #1e3a8a;
+        }
+        
+        .venue-info {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .campus-info {
+            background: #ecfdf5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid #10b981;
+        }
+        
+        .info-label {
+            color: #1e3a8a;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-card {
+            background: #f8fafc;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-top: 3px solid #8b5cf6;
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .coming-soon {
+            color: #8b5cf6;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            nav a {
+                padding: 0.8rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo-box">
+                    <!-- IIT Madras Logo -->
+                    <img src="iitm-logo.png" alt="IIT Madras Logo" id="iitm-logo">
+                </div>
+                <div class="logo-box">
+                    <!-- ADMA Logo -->
+                    <img src="adma-logo.png" alt="ADMA Logo" id="adma-logo">
+                </div>
+            </div>
+            <h1>Twenty Second ADMA International Conference of Acadmy of Discrete Mathematics and Applications</h1>
+            <p class="subtitle">Intermational Conference on Discrete Mathematics and Applications</p>
+            <div class="date-venue">
+                <strong>June 7-10, 2026 | IIT Madras, Chennai, India</strong>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#about">About</a>
+            <a href="#dates">Important Dates</a>
+            <a href="#call-for-papers">Call for Papers</a>
+            <a href="#speakers">Invited Speakers</a>
+            <a href="#venue">Venue</a>
+            <a href="#registration">Registration</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#committees">Committees</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About the Conference</h2>
+            <div class="highlight-box">
+                <p>Welcome to the ADMA Annual Conference 2026, hosted by the Indian Institute of Technology Madras. This conference brings together leading researchers, academics, and practitioners in discrete mathematics and its applications from around the world.</p>
+                <p style="margin-top: 1rem;">The Academy of Discrete Mathematics and Applications (ADMA) is dedicated to promoting research and education in discrete mathematics, combinatorics, graph theory, and related fields. This annual conference serves as a platform for sharing cutting-edge research, fostering collaborations, and advancing the field.</p>
+            </div>
+            
+            <h3>About IIT Madras</h3>
+            <div class="campus-info">
+                <p>The Indian Institute of Technology Madras is one of India's premier engineering and technology institutions, consistently ranked as the #1 institute in the country [web:2][web:42]. Established in 1959, IIT Madras is a residential institute spread across 700 acres of lush greenery, which was formerly part of the adjoining Guindy National Park [web:47].</p>
+                <p style="margin-top: 0.8rem;">The campus is home to nearly 750 faculty members, 14,000 students, and state-of-the-art facilities including 100+ laboratories, modern classrooms, an Olympic-standard sports complex, and a world-class central library [web:42]. Located in Chennai, the campus is conveniently situated 10 km from Chennai Airport and 12 km from Chennai Central Railway station [web:2].</p>
+            </div>
+        </section>
+        
+        <section id="dates">
+            <h2>Important Dates</h2>
+            <div class="dates-grid">
+                <div class="date-item">
+                    <strong>Paper Submission Deadline:</strong>
+                    <span class="coming-soon">15 April 2026</span>
+                </div>
+                <div class="date-item">
+                    <strong>Notification of Acceptance:</strong>
+                    <span class="coming-soon">10 May 2026</span>
+                </div>
+                <div class="date-item">
+                    <strong>Early Registration Deadline:</strong>
+                    <span class="coming-soon">15 May 2026</span>
+                </div>
+                <div class="date-item">
+                    <strong>Conference Dates:</strong>
+                    June 7-10, 2026
+                </div>
+            </div>
+        </section>
+        
+        <section id="call-for-papers">
+            <h2>Call for Papers</h2>
+            <div class="highlight-box">
+                <p><span class="coming-soon">Details will be announced soon.</span></p>
+                <p style="margin-top: 1rem;">We invite submissions of original research papers in all areas of discrete mathematics and its applications, including but not limited to:</p>
+                <ul style="margin-left: 2rem; margin-top: 0.8rem; line-height: 1.8;">
+                    <li>Combinatorics</li>
+                    <li>Graph Theory</li>
+                    <li>Algebraic Combinatorics</li>
+                    <li>Coding Theory</li>
+                    <li>Cryptography</li>
+		    <!--  <li>Discrete Optimization</li>
+		    <li>Theoretical Computer Science</li> -->
+                </ul>
+            </div>
+        </section>
+        
+        <section id="speakers">
+            <h2>Invited Speakers</h2>
+<div class="speaker-grid">
+    <div class="speaker-card">
+        <img src="speakers/katona.jpg" alt="Prof. Gyula O.H. Katona" class="speaker-photo">
+        <div class="speaker-name">Prof. Gyula O.H. Katona</div>
+        <div class="speaker-affiliation">Alfréd Rényi Institute of Mathematics, Hungary</div>
+    </div>
+    
+    <div class="speaker-card">
+        <img src="speakers/bayer.jpg" alt="Prof. Margaret Bayer" class="speaker-photo">
+        <div class="speaker-name">Prof. Margaret Bayer</div>
+        <div class="speaker-affiliation">University of Kansas, USA</div>
+    </div>
+    
+    <div class="speaker-card">
+        <img src="speakers/srinivasan.jpg" alt="Prof. Murali Srinivasan" class="speaker-photo">
+        <div class="speaker-name">Prof. Murali Srinivasan</div>
+        <div class="speaker-affiliation">IIT Bombay, India</div>
+    </div>
+    
+    <div class="speaker-card">
+        <img src="speakers/nishad.jpg" alt="Prof. Nishad Kothari" class="speaker-photo">
+        <div class="speaker-name">Prof. Nishad Kothari</div>
+        <div class="speaker-affiliation">IIT Madras, India</div>
+    </div>
+    
+    <div class="speaker-card">
+        <img src="speakers/ayyer.jpg" alt="Prof. V Arvind" class="speaker-photo">
+        <div class="speaker-name">Prof. V Arvind</div>
+        <div class="speaker-affiliation">IMSc,Chennai</div>
+    </div>
+    
+    <div class="speaker-card">
+        <img src="speakers/balakrishnan.jpg" alt="Prof. R. Balakrishnan" class="speaker-photo">
+        <div class="speaker-name">Prof. R. Balakrishnan</div>
+        <div class="speaker-affiliation">Bharathidasan University, India</div>
+    </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Yasmeen Akhtar</div>
+                    <div class="speaker-affiliation">BITS Pinali Goa campus, India</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Manoj Changat</div>
+                    <div class="speaker-affiliation">University of Kerala, India</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Priyavrat Deshpande</div>
+                    <div class="speaker-affiliation">Chennai Mathematical Institute, India</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. S Viswanath</div>
+                    <div class="speaker-affiliation">IMSc, India</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Venkatesh Rajendran</div>
+                    <div class="speaker-affiliation">IISc, India</div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-name">Prof. Hiranya Kishore Dey</div>
+                    <div class="speaker-affiliation">IISER Kolkata, India</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="venue">
+            <h2>Venue</h2>
+            <div class="venue-info">
+                <p><span class="info-label">Conference Venue:</span>Central Lecture Theatre, IIT Madras</p>
+                <p style="margin-top: 0.8rem;"><span class="info-label">Address:</span>Indian Institute of Technology Madras<br>
+                Sardar Patel Road, Adyar<br>
+                Chennai, Tamil Nadu 600036, India</p>
+            </div>
+            
+            <h3>About the Campus</h3>
+            <p>The IIT Madras campus is a self-contained residential campus spread across 700 acres of lush greenery, with Spotted Deers, Blackbucks and Monkey's and several species of birds and other mammals, formerly part of the Guindy National Park [web:47]. The campus features modern facilities including air-conditioned conference halls, an open-air theater, and comprehensive amenities for participants [web:42].</p>
+            
+            <p style="margin-top: 1rem;"><span class="info-label">Transportation:</span> The campus is well-connected and easily accessible:</p>
+            <ul style="margin-left: 2rem; margin-top: 0.5rem; line-height: 1.8;">
+                <li>10 km from Chennai International Airport</li>
+                <li>12 km from Chennai Central Railway Station</li>
+                <li>Nearest Metro station: Little Mount/Saidapet/Guindy</li>
+                <li>Connected by regular city bus services</li>
+                <li>Nearest MRTS station: Kasturba Nagar</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><span class="info-label">Campus Facilities:</span>Two guest houses, Two schools, three temples, three bank branches with ATMs, hospital, shopping centers, restaurants, gymnasium, and Olympic-standard sports facilities [web:2][web:42].</p>
+            
+            <div class="campus-info" style="margin-top: 1rem;">
+                <strong>Accommodation:</strong> <span class="coming-soon">Information about guest houses and nearby hotels will be provided soon.</span>
+            </div>
+        </section>
+        
+        <section id="registration">
+            <h2>Registration</h2>
+            <div class="highlight-box">
+                <p><span class="coming-soon">Registration details and fees will be announced soon.</span></p>
+                <p style="margin-top: 1rem;">Registration will include access to all conference sessions, conference materials, meals during the conference, and social events.</p>
+            </div>
+        </section>
+        
+        <section id="schedule">
+            <h2>Schedule</h2>
+            <div class="highlight-box">
+                <p><span class="coming-soon">Detailed schedule will be announced soon.</span></p>
+                <p style="margin-top: 1rem;">The conference will run from June 7-10, 2026, featuring invited talks, contributed presentations, poster sessions, and networking opportunities.</p>
+            </div>
+        </section>
+        
+        <section id="committees">
+            <h2>Organizing Committees</h2>
+            
+            <h3>International Academic Program Committee</h3>
+            <ul class="committee-list">
+                <li>President of ADMA (ex officio Chair)</li>
+                <li>Academic Secretary of ADMA (ex officio Secretary)</li>
+                <li><strong>Prof. Gyula O.H. Katona</strong> - Alfréd Rényi Institute of Mathematics, Hungary</li>
+                <li><strong>Prof. Peter J. Cameron</strong> - Queen Mary, University of London, UK</li>
+                <li><strong>Prof. Arvind Ayyer</strong> - Indian Institute of Science, Bengaluru</li>
+                <li><strong>Prof. Yuval Roichman</strong> - Bar-Ilan University, Israel</li>
+                <li><strong>Prof. Niranjan Balachandran</strong> - IIT Bombay</li>
+                <li><strong>Prof. Ron Adin</strong> - Bar-Ilan University, Israel</li>
+            </ul>
+            
+            <h3>Local Organising Committee</h3>
+            <ul class="committee-list">
+                <li><strong>Dr. Narayanan N</strong> - IIT Madras</li>
+                <li><strong>Dr. Arunkumar G</strong> - IIT Madras</li>
+                <li><strong>Dr. Subhajit Ghosh</strong> - IIT Madras</li>
+                <li><strong>Prof. Amritanshu Prasad</strong> - Director, IMSc, Chennai</li>
+                <li><strong>Dr. T. Karthick</strong> - ISI Chennai</li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3 style="margin-top: 0; color: #1e3a8a;">General Inquiries</h3>
+                    <p><span class="coming-soon">Email: admaicdm@gmail.com</span></p>
+                </div>
+                <div class="contact-card">
+                    <h3 style="margin-top: 0; color: #1e3a8a;">Local Organizing Committee</h3>
+                    <p><span class="coming-soon">Email: garnukumar@iitm.ac.in</span></p>
+                </div>
+                <div class="contact-card">
+                    <h3 style="margin-top: 0; color: #1e3a8a;">Registration Queries</h3>
+                    <p><span class="coming-soon">Email: admaicdm@gmail.com</span></p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <p><strong>Stay Updated:</strong> For the latest updates and announcements, please check this page regularly or follow ADMA communications.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 ADMA Annual Conference | IIT Madras, Chennai</p>
+        <p style="margin-top: 0.5rem;">Academy of Discrete Mathematics and Applications</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+        
+        // Placeholder for missing speaker photos
+        document.querySelectorAll('.speaker-photo').forEach(img => {
+            img.onerror = function() {
+                const initials = this.alt.split(' ').slice(0, 2).map(n => n[0]).join('');
+                this.parentElement.innerHTML = `
+                    <div style="width: 120px; height: 120px; border-radius: 50%; background: #3b82f6; 
+                                display: flex; align-items: center; justify-content: center; 
+                                margin: 0 auto 1rem auto; color: white; font-size: 2rem; 
+                                font-weight: bold; border: 4px solid #3b82f6;">
+                        ${initials}
+                    </div>
+                    ${this.parentElement.innerHTML.replace(this.outerHTML, '')}
+                `;
+            };
+        });
+        
+        // Placeholder for logo loading
+        document.getElementById('iitm-logo').onerror = function() {
+            this.parentElement.innerHTML = '<div style="padding: 20px; font-weight: bold; color: #1e3a8a;">IIT MADRAS</div>';
+        };
+        
+        document.getElementById('adma-logo').onerror = function() {
+            this.parentElement.innerHTML = '<div style="padding: 20px; font-weight: bold; color: #1e3a8a;">ADMA</div>';
+        };
+    </script>
+</body>
+</html>
+
