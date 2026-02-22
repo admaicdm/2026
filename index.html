@@ -307,9 +307,9 @@
     background-color: #f8f9fa;
     border-radius: 10px;
 }
-
+/*
 .qr-code {
-    width: 180px;          /* Adjust size if needed */
+    width: 180px;          
     height: auto;
     margin: 15px 0;
     transition: transform 0.3s ease;
@@ -317,7 +317,37 @@
 
 .qr-code:hover {
     transform: scale(1.05);
+}*/
+registration-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #eef2f7;
+    border-radius: 12px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
+
+.reg-text {
+    flex: 1;
+}
+
+.reg-qr img {
+    width: 180px;
+    height: auto;
+}
+
+.reg-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+		
     </style>
 </head>
 <body>
@@ -525,14 +555,28 @@ scopus indexed journal.
         </section>
         
         <section id="registration">
-            <h2>Registration</h2>
+            <h2>Registration</h2> <!--
 			<div class="qr-section">
     <h3>Scan to Register</h3>
     <a href="https://conf.code.iitm.ac.in/conf/ADMA_2026/" target="_blank">
         <img src="ConfRegnQR.png" alt="Conference Registration QR Code" class="qr-code">
     </a>
     <p>Scan the QR code or click above to register.</p>
+</div> -->
+<div class="registration-box">
+    <div class="reg-text">
+        <h2>Conference Registration</h2>
+        <p>Please register using the link below or scan the QR code.</p>
+        <a href="https://conf.code.iitm.ac.in/conf/ADMA_2026/" class="reg-button">
+            Register Now
+        </a>
+    </div>
+    <div class="reg-qr">
+        <img src="ConfRegnQR.png" alt="Conference Registration QR Code">
+    </div>
 </div>
+			
+			
 			<div class="date-item">
                     <strong>Early Bird Indian:INR 4200</strong>
 				</div>
