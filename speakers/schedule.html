@@ -14,8 +14,6 @@
   --color-text: #1a1a2e;
   --color-text-muted: #555570;
   --color-border: #c8ccd8;
-
-  /* Row backgrounds - improved contrast palette */
   --color-header-bg: #1a3a5c;
   --color-header-text: #ffffff;
   --color-day-bg: #1a3a5c;
@@ -26,10 +24,14 @@
   --color-inv-text: #1a4a2a;
   --color-endow-bg: #fff3cd;
   --color-endow-text: #4a3500;
-  --color-best-bg: #fde8d0;
-  --color-best-text: #5c2800;
-  --color-best-header-bg: #f4a860;
-  --color-best-header-text: #2e1200;
+  --color-best-bg: #fff4cc;
+  --color-best-bg-alt: #ffe3a3;
+  --color-best-text: #3a2100;
+  --color-best-header-bg: #8a3ffc;
+  --color-best-header-text: #ffffff;
+  --color-best-time-bg: #3b1a78;
+  --color-best-time-text: #ffffff;
+  --color-best-border: #b86b00;
   --color-parallel-header-bg: #e07b39;
   --color-parallel-header-text: #ffffff;
   --color-parallel-bg: #fdebd6;
@@ -37,8 +39,6 @@
   --color-row2: #ffffff;
   --color-row1-text: #1a1a2e;
   --color-row2-text: #1a1a2e;
-
-  /* Tracks - distinct, high-contrast */
   --color-trackA-bg: #fff0d6;
   --color-trackA-text: #4a2800;
   --color-trackB-bg: #d6f0e0;
@@ -49,16 +49,12 @@
   --color-trackD-text: #002a5c;
   --color-trackE-bg: #ffd6e8;
   --color-trackE-text: #5c0028;
-
   --color-track-header-bg: #2d5f3f;
   --color-track-header-text: #ffffff;
-
   --color-valed-bg: #cce5ff;
   --color-valed-text: #00264d;
-
   --color-link: #1a4a8c;
   --color-link-hover: #0d2e5c;
-
   --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
   --radius-md: 0.5rem;
   --font-display: 'Source Serif 4', Georgia, serif;
@@ -75,7 +71,6 @@
   --color-text: #e0e4f0;
   --color-text-muted: #9ca3c0;
   --color-border: #2e3350;
-
   --color-header-bg: #0d2040;
   --color-header-text: #c8ddf5;
   --color-day-bg: #0d2040;
@@ -86,10 +81,14 @@
   --color-inv-text: #7dd4a0;
   --color-endow-bg: #2e2200;
   --color-endow-text: #f5d060;
-  --color-best-bg: #2e1800;
-  --color-best-text: #f5b070;
-  --color-best-header-bg: #7a3a10;
-  --color-best-header-text: #ffe0c0;
+  --color-best-bg: #3a2700;
+  --color-best-bg-alt: #4a3300;
+  --color-best-text: #ffe8a3;
+  --color-best-header-bg: #5b2bbf;
+  --color-best-header-text: #ffffff;
+  --color-best-time-bg: #c9b6ff;
+  --color-best-time-text: #16003d;
+  --color-best-border: #f2b84b;
   --color-parallel-header-bg: #7a3a10;
   --color-parallel-header-text: #ffe0c0;
   --color-parallel-bg: #2e2010;
@@ -97,7 +96,6 @@
   --color-row2: #1a1d27;
   --color-row1-text: #e0e4f0;
   --color-row2-text: #e0e4f0;
-
   --color-trackA-bg: #2e1e00;
   --color-trackA-text: #ffd080;
   --color-trackB-bg: #002e14;
@@ -108,16 +106,12 @@
   --color-trackD-text: #70b8ff;
   --color-trackE-bg: #3a0018;
   --color-trackE-text: #ff90c0;
-
   --color-track-header-bg: #0d2e18;
   --color-track-header-text: #7dd4a0;
-
   --color-valed-bg: #001833;
   --color-valed-text: #70b8ff;
-
   --color-link: #70b8ff;
   --color-link-hover: #a0d0ff;
-
   --shadow-md: 0 4px 20px rgba(0,0,0,0.5);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -130,16 +124,8 @@ body {
   background: var(--color-bg);
   transition: background 200ms, color 200ms;
 }
-.page-wrap {
-  max-width: 1120px;
-  margin-inline: auto;
-  padding: 2rem 1rem 4rem;
-}
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  position: relative;
-}
+.page-wrap { max-width: 1120px; margin-inline: auto; padding: 2rem 1rem 4rem; }
+header { text-align: center; margin-bottom: 2rem; position: relative; }
 header h1 {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
@@ -149,20 +135,10 @@ header h1 {
   margin-bottom: 0.4rem;
 }
 [data-theme="dark"] header h1 { color: var(--color-link); }
-header .subtitle {
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  margin-bottom: 0.3rem;
-}
-header .venue {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  font-style: italic;
-}
+header .subtitle { font-size: var(--text-base); font-weight: 600; color: var(--color-text-muted); margin-bottom: 0.3rem; }
+header .venue { font-size: var(--text-xs); color: var(--color-text-muted); font-style: italic; }
 .theme-toggle {
-  position: absolute;
-  top: 0; right: 0;
+  position: absolute; top: 0; right: 0;
   background: none;
   border: 1px solid var(--color-border);
   border-radius: 999px;
@@ -173,7 +149,6 @@ header .venue {
   transition: background 150ms;
 }
 .theme-toggle:hover { background: var(--color-border); }
-
 .schedule-table {
   width: 100%;
   border-collapse: collapse;
@@ -200,14 +175,7 @@ header .venue {
   font-size: var(--text-xs);
   line-height: 1.5;
 }
-.schedule-table td:first-child {
-  text-align: center;
-  white-space: nowrap;
-  font-weight: 700;
-  font-size: 0.75rem;
-}
-
-/* ---- Special rows ---- */
+.schedule-table td:first-child { text-align: center; white-space: nowrap; font-weight: 700; font-size: 0.75rem; }
 .row-day td {
   background: var(--color-day-bg);
   font-family: var(--font-display);
@@ -228,88 +196,27 @@ header .venue {
 }
 .row-inv td { background: var(--color-inv-bg); color: var(--color-inv-text); }
 .row-endow td { background: var(--color-endow-bg); color: var(--color-endow-text); }
-
-.row-best-header td {
-  background: var(--color-best-header-bg);
-  color: var(--color-best-header-text);
-  font-weight: 700;
-  padding: 0.5rem 0.9rem;
-}
-.row-best td { background: var(--color-best-bg); color: var(--color-best-text); }
-
-.row-parallel-header td {
-  background: var(--color-parallel-header-bg);
-  color: var(--color-parallel-header-text);
-  font-weight: 700;
-  padding: 0.5rem 0.9rem;
-}
-.row-track-header td {
-  background: var(--color-track-header-bg);
-  color: var(--color-track-header-text);
-  font-weight: 700;
-  text-align: center !important;
-  font-size: var(--text-xs);
-  padding: 0.45rem 0.9rem;
-}
+.row-best-header td { background: var(--color-best-header-bg); color: var(--color-best-header-text); font-weight: 800; padding: 0.6rem 0.9rem; letter-spacing: 0.02em; }
+.row-best td { background: var(--color-best-bg); color: var(--color-best-text); border-bottom: 1px solid var(--color-best-border); }
+.row-best:nth-of-type(even) td { background: var(--color-best-bg-alt); }
+.row-best td:first-child { background: var(--color-best-time-bg); color: var(--color-best-time-text); font-weight: 800; text-align: center; white-space: nowrap; }
+.row-best td:nth-child(2) { font-weight: 800; text-align: center; white-space: nowrap; }
+.row-best .talk-link { font-weight: 650; }
+.row-parallel-header td { background: var(--color-parallel-header-bg); color: var(--color-parallel-header-text); font-weight: 700; padding: 0.5rem 0.9rem; }
+.row-track-header td { background: var(--color-track-header-bg); color: var(--color-track-header-text); font-weight: 700; text-align: center !important; font-size: var(--text-xs); padding: 0.45rem 0.9rem; }
 .row-row1 td { background: var(--color-row1); color: var(--color-row1-text); }
 .row-row2 td { background: var(--color-row2); color: var(--color-row2-text); }
-
-/* Track rows - each track gets its own color class */
 .row-trackA td { background: var(--color-trackA-bg); color: var(--color-trackA-text); }
 .row-trackB td { background: var(--color-trackB-bg); color: var(--color-trackB-text); }
 .row-trackC td { background: var(--color-trackC-bg); color: var(--color-trackC-text); }
 .row-trackD td { background: var(--color-trackD-bg); color: var(--color-trackD-text); }
 .row-trackE td { background: var(--color-trackE-bg); color: var(--color-trackE-text); }
-
-.row-valed td {
-  background: var(--color-valed-bg);
-  text-align: center !important;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--text-base);
-  color: var(--color-valed-text);
-}
-.talk-link {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: oklch(from currentColor l c h / 0.4);
-  text-underline-offset: 2px;
-  transition: text-decoration-color 150ms;
-}
-.talk-link:hover {
-  text-decoration-color: currentColor;
-  font-weight: 600;
-}
-
-/* Fix: track badge alignment in first parallel row of a time slot */
-/* The time cell uses rowspan; track cell must align properly */
-.track-cell {
-  vertical-align: middle;
-  white-space: nowrap;
-  font-weight: 700;
-  font-size: 0.72rem;
-  min-width: 5.5rem;
-}
-.track-label {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-  font-weight: 800;
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  border: 1px solid oklch(from currentColor l c h / 0.35);
-}
-
-/* Time cell in parallel sessions */
-.time-rowspan {
-  vertical-align: middle !important;
-  font-weight: 700;
-  font-size: 0.75rem;
-  text-align: center !important;
-  white-space: nowrap;
-  background: var(--color-header-bg) !important;
-  color: var(--color-header-text) !important;
-}
+.row-valed td { background: var(--color-valed-bg); text-align: center !important; font-family: var(--font-display); font-weight: 700; font-size: var(--text-base); color: var(--color-valed-text); }
+.talk-link { color: inherit; text-decoration: underline; text-decoration-color: oklch(from currentColor l c h / 0.4); text-underline-offset: 2px; transition: text-decoration-color 150ms; }
+.talk-link:hover { text-decoration-color: currentColor; font-weight: 600; }
+.track-cell { vertical-align: middle; text-align: center !important; white-space: nowrap; font-weight: 700; font-size: 0.72rem; width: 5.5rem; min-width: 5.5rem; padding-left: 0.9rem; padding-right: 0.9rem; }
+.track-label { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 3px; font-weight: 800; font-size: 0.68rem; letter-spacing: 0.06em; border: 1px solid oklch(from currentColor l c h / 0.35); }
+.time-rowspan { vertical-align: middle !important; font-weight: 700; font-size: 0.75rem; text-align: center !important; white-space: nowrap; background: var(--color-header-bg) !important; color: var(--color-header-text) !important; }
 </style>
 </head>
 <body>
@@ -359,25 +266,21 @@ header .venue {
 </tr>
 <tr class="row-break"><td colspan="4">— Coffee Break —</td></tr>
 
-<tr class="row-best-header"><td colspan="4"><strong>Best Paper Presentations</strong>&ensp;(16:30–; 15+5 min each)</td></tr>
-<tr class="row-best"><td></td><td></td><td>Neha Goregaokar</td><td><a class="talk-link" href="Neha Goregaokar.pdf">The geometry of a counting formula for deformations of the braid arrangement</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Santhosh Raghul</td><td><a class="talk-link" href="Santhosh Raghul.pdf">θ-free graphs: characterization and consequences</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Yash Chawda</td><td><a class="talk-link" href="Yash Chawda.pdf">On the Majority Game Chromatic Number of Trees</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Vishnu Kumar</td><td><a class="talk-link" href="Vishnu Kumar.pdf">Tight Bounds on the Caratheodory and Exchange Numbers</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Bikramjit Roy</td><td><a class="talk-link" href="Bikramjit Roy.pdf">Tropical Nets and Their Role in Kleene Stars of Tropical Matrices</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Biswajit Das</td><td><a class="talk-link" href="Biswajit Das.pdf">On Patterns and Languages in 1-11-Representations of Graphs</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Abhishek Girish Aher</td><td><a class="talk-link" href="Abhishek Girish Aher.pdf">Ramsey Sequences with Bounded Clique Number</a></td></tr>
-<tr class="row-best"><td></td><td></td><td>Midhuna V. Ajith</td><td><a class="talk-link" href="Midhuna V.Ajith.pdf">On the Structure and Invariants of Endomorphism Graphs of Finite Groups</a></td></tr>
-  
-  <tr><td></td></tr>
-    <tr><td>* * *</td></tr>
-  <tr><td></td></tr>
+<tr class="row-best-header"><td colspan="4"><strong>Best Paper Presentations</strong>&ensp;(16:30–; 15+5 min each &middot; Venue: NAC 522)</td></tr>
+<tr class="row-best"><td>16:30–16:50</td><td>Best Paper</td><td>Neha Goregaokar</td><td><a class="talk-link" href="Neha Goregaokar.pdf">The geometry of a counting formula for deformations of the braid arrangement</a></td></tr>
+<tr class="row-best"><td>16:50–17:10</td><td>Best Paper</td><td>Santhosh Raghul</td><td><a class="talk-link" href="Santhosh Raghul.pdf">θ-free graphs: characterization and consequences</a></td></tr>
+<tr class="row-best"><td>17:10–17:30</td><td>Best Paper</td><td>Yash Chawda</td><td><a class="talk-link" href="Yash Chawda.pdf">On the Majority Game Chromatic Number of Trees</a></td></tr>
+<tr class="row-best"><td>17:30–17:50</td><td>Best Paper</td><td>Vishnu Kumar</td><td><a class="talk-link" href="Vishnu Kumar.pdf">Tight Bounds on the Caratheodory and Exchange Numbers</a></td></tr>
+<tr class="row-best"><td>17:50–18:10</td><td>Best Paper</td><td>Bikramjit Roy</td><td><a class="talk-link" href="Bikramjit Roy.pdf">Tropical Nets and Their Role in Kleene Stars of Tropical Matrices</a></td></tr>
+<tr class="row-best"><td>18:10–18:30</td><td>Best Paper</td><td>Biswajit Das</td><td><a class="talk-link" href="Biswajit Das.pdf">On Patterns and Languages in 1-11-Representations of Graphs</a></td></tr>
+<tr class="row-best"><td>18:30–18:50</td><td>Best Paper</td><td>Abhishek Girish Aher</td><td><a class="talk-link" href="Abhishek Girish Aher.pdf">Ramsey Sequences with Bounded Clique Number</a></td></tr>
+<tr class="row-best"><td>18:50–19:10</td><td>Best Paper</td><td>Midhuna V. Ajith</td><td><a class="talk-link" href="Midhuna V.Ajith.pdf">On the Structure and Invariants of Endomorphism Graphs of Finite Groups</a></td></tr>
 
 <!-- ==================== DAY 2 ==================== -->
 <tr class="row-day"><td colspan="4">Day 2</td></tr>
 
 <tr class="row-row1">
-  <td>9:00–10:00</td><td>Invited Talk 3</td><td>Gyula Katona</td>
+  <td>9:00–10:00</td><td>Invited Talk</td><td>Gyula Katona</td>
   <td><a class="talk-link" href="Gyula Katona.pdf">Erdős-Ko-Rado theorem, Erdős Matching Conjecture, between and around</a></td>
 </tr>
 <tr class="row-row2">
@@ -401,8 +304,9 @@ header .venue {
 </tr>
 <tr class="row-break"><td colspan="4">— Coffee Break —</td></tr>
 
-<tr class="row-parallel-header"><td colspan="4"><strong>Parallel Sessions</strong>&ensp;(16:30–18:30; 15+5 min each × 5 tracks)</td></tr>
+<tr class="row-parallel-header"><td colspan="4"><strong>Parallel Sessions</strong>&ensp;(16:30–18:30; 15+5 min each &times; 5 tracks &middot; Venues KCB: A:522; B:519; C:504; D:505; E:506)</td></tr>
 <tr class="row-track-header"><td>Time</td><td>Track</td><td>Speaker</td><td>Title</td></tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">16:30–16:50</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
@@ -429,6 +333,7 @@ header .venue {
   <td>Nagaraja P</td>
   <td><a class="talk-link" href="Nagaraja P.pdf">Sharp Bounds on the Augmented Sombor Index and Related Inequalities</a></td>
 </tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">16:50–17:10</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
@@ -455,11 +360,12 @@ header .venue {
   <td>Md Sohail</td>
   <td><a class="talk-link" href="Md Sohail.pdf">Simplicial Vertices of Superpower Graph of A<sub>n</sub>, D<sub>2n</sub> and EPPO Group</a></td>
 </tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">17:10–17:30</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Shivaragavi Rajendran</td>
-  <td><a class="talk-link" href="Shivaragavi Rajendran.pdf">Generalized Edge Metric Codes for Molecular Graphs of Fungal Treatment Drugs</a></td>
+  <td>Sauvik Poddar</td>
+  <td><a class="talk-link" href="Sauvik Poddar.pdf">Cayley colour integral groups</a></td>
 </tr>
 <tr class="row-trackB">
   <td class="track-cell"><span class="track-label">Track B</span></td>
@@ -478,14 +384,15 @@ header .venue {
 </tr>
 <tr class="row-trackE">
   <td class="track-cell"><span class="track-label">Track E</span></td>
-  <td>Sauvik Poddar</td>
-  <td><a class="talk-link" href="Sauvik Poddar.pdf">Cayley colour integral groups</a></td>
+  <td>Shivaragavi Rajendran</td>
+  <td><a class="talk-link" href="Shivaragavi Rajendran.pdf">Generalized Edge Metric Codes for Molecular Graphs of Fungal Treatment Drugs</a></td>
 </tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">17:30–17:50</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Anjitha Ashokan</td>
-  <td><a class="talk-link" href="Anjitha Ashokan.pdf">Eccentricity energy change of coalescence of graphs due to edge deletion</a></td>
+  <td>Raina Mary Thomas</td>
+  <td><a class="talk-link" href="Raina Mary Thomas.pdf">Covering Arrays on Direct Product Graphs</a></td>
 </tr>
 <tr class="row-trackB">
   <td class="track-cell"><span class="track-label">Track B</span></td>
@@ -499,14 +406,15 @@ header .venue {
 </tr>
 <tr class="row-trackD">
   <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Raina Mary Thomas</td>
-  <td><a class="talk-link" href="Raina Mary Thomas.pdf">Covering Arrays on Direct Product Graphs</a></td>
+  <td>Anjitha Ashokan</td>
+  <td><a class="talk-link" href="Anjitha Ashokan.pdf">Eccentricity energy change of coalescence of graphs due to edge deletion</a></td>
 </tr>
 <tr class="row-trackE">
   <td class="track-cell"><span class="track-label">Track E</span></td>
   <td>Surendrakumari J</td>
   <td><a class="talk-link" href="Surendrakumari J.pdf">Reduced Reverse Degree-Based Topological Indices and QSPR Analysis of Drugs Used for Breast Cancer Treatment</a></td>
 </tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">17:50–18:10</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
@@ -533,6 +441,7 @@ header .venue {
   <td>Benjamin John</td>
   <td><a class="talk-link" href="Benjamin John.pdf">Edge Moment of a Graph: Structural Descriptors, Polynomial Representations, and Correlation with Octane Properties</a></td>
 </tr>
+
 <tr class="row-trackA">
   <td class="time-rowspan" rowspan="5">18:10–18:30</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
@@ -560,12 +469,8 @@ header .venue {
   <td><a class="talk-link" href="Yash Patel.pdf">On the Sombor Index and Its Variants in Powers of Cycle Graphs</a></td>
 </tr>
 
-<tr class="row-break"><td colspan="4" style="font-size:var(--text-base); font-weight:700; text-align:center;">🍽️ Conference Dinner</td></tr>
+<tr class="row-break"><td colspan="4" style="font-size:var(--text-base); font-weight:700; text-align:center;">🍽️ Conference Banquet &ensp;(19:00–21:00 &middot; Venue: Terrace Hall)</td></tr>
 
-
-  <tr><td></td></tr>
-    <tr><td>* * *</td></tr>
-  <tr><td></td></tr>
 <!-- ==================== DAY 3 ==================== -->
 <tr class="row-day"><td colspan="4">Day 3</td></tr>
 
@@ -589,10 +494,200 @@ header .venue {
 </tr>
 <tr class="row-break"><td colspan="4">— Coffee Break —</td></tr>
 
-<tr class="row-parallel-header"><td colspan="4"><strong>Parallel Sessions</strong>&ensp;(15:30–18:30; 15+5 min each × 4 tracks)</td></tr>
+<tr class="row-parallel-header"><td colspan="4"><strong>Parallel Sessions</strong>&ensp;(15:30–18:30; 15+5 min each &times; 5 tracks &middot; Venues KCB: A:522; B:519; C:504; D:505; E:506)</td></tr>
 <tr class="row-track-header"><td>Time</td><td>Track</td><td>Speaker</td><td>Title</td></tr>
+
 <tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">15:30–15:50</td>
+  <td class="time-rowspan" rowspan="5">15:30–15:50</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Dipnit Biswas</td>
+  <td><a class="talk-link" href="Dipnit Biswas.pdf">Polytope–Tableau Correspondences for Type A KR Crystals</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Aloysius Godinho</td>
+  <td><a class="talk-link" href="Aloysius Godinho.pdf">On Group Distance Magic Labeling of Circulant Graphs and Graph Products</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Sini P</td>
+  <td><a class="talk-link" href="Sini P.pdf">The Aharoni-Korman Conjecture for Partially Semi-well Ordered Sets</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Swathi D</td>
+  <td><a class="talk-link" href="Swathi D.pdf">Secure Domination in Bisplit Graphs - An Algorithmic Study</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Soumyashree Rana</td>
+  <td><a class="talk-link" href="Soumyashree Rana.pdf">On the Complexity of Co-secure Dominating Set Problem</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">15:50–16:10</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Amitayu Banerjee</td>
+  <td><a class="talk-link" href="Amitayu Banerjee.pdf">Automorphism groups and Distinguishing Colorings of Central and Middle Graphs</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Vysakh C</td>
+  <td><a class="talk-link" href="Vysakh C.pdf">Eccentric Connectivity Index of Strongly Connected Digraphs</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Nithya Muraleedharan</td>
+  <td><a class="talk-link" href="Nithya Muraleedharan.pdf">Degree Restricted Domination in Complement Graphs</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Anuvinda J</td>
+  <td><a class="talk-link" href="Anuvinda J.pdf">Generalized Binomial Edge Ideals of Whisker Graphs via an Extension of Generalized Corona Products</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Prashant Pandurang Waghmare</td>
+  <td><a class="talk-link" href="Prashant Pandurang Waghmare.pdf">Cohen-Macauleyness of the Zero-divisor Graph of a Boolean Poset</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">16:10–16:30</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Balaji Rohidas Kadam</td>
+  <td><a class="talk-link" href="Balaji Rohidas Kadam.pdf">More Results on Modular Nim Game</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Peer Abdul Manan</td>
+  <td><a class="talk-link" href="Peer Abdul Manan.pdf">Bounds for the trace norm of A<sub>α</sub> matrix of digraphs</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Carunya R</td>
+  <td><a class="talk-link" href="Carunya R.pdf">Bounds on Burning Number for Butterfly-Type Networks</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Prof. Madhavi Levaku</td>
+  <td><a class="talk-link" href="Madhavi Levaku.pdf">Idempotent Cayley Graph and its Basic Properties</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Shrinivas Neeralakeri</td>
+  <td><a class="talk-link" href="Shrinivas Neeralakeri.pdf">Sharp Bounds for the Elliptic Sombor Index of Four New Graph Operations</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">16:30–16:50</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>John J Chavara</td>
+  <td><a class="talk-link" href="John J Chavara.pdf">Step systems of Ptolemaic graphs and Some of its subclasses</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Iswar Mahato</td>
+  <td><a class="talk-link" href="Iswar Mahato.pdf">Eigenvalue multiplicity and energy of distance and Seidel matrices of cographs</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Akankshya Sahu</td>
+  <td><a class="talk-link" href="Akankshya Sahu.pdf">Gallai's Path Decomposition of Cayley Graph of Finite Abelian Group</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Nalliah M</td>
+  <td><a class="talk-link" href="Nalliah M.pdf">Further results on Local Inclusive Distance Antimagic Chromatic number for some families of Graphs</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Priyanka Vishwakarma</td>
+  <td><a class="talk-link" href="Priyanka Vishwakarma.pdf">Exploring Symmetry-Breaking Parameters in Selected graph families</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">16:50–17:10</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Aswathi H</td>
+  <td><a class="talk-link" href="Aswathi H.pdf">On the Dynamic Colouring of Generalised Mycielskian of Some Graph Classes</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Akhila M S</td>
+  <td><a class="talk-link" href="Akhila M S.pdf">An Application to Zero-divisor Graphs in Quantum Mechanics</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Krishnadas K</td>
+  <td><a class="talk-link" href="Krishnadas K.pdf">Studies on various notions of ip-convexity on directed acyclic graphs and its relationship with directed graphs</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Meenalochani S</td>
+  <td><a class="talk-link" href="Meenalochani S.pdf">Hardness Results for Vertex-Edge Roman Domination in Graphs</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Ann Mary George</td>
+  <td><a class="talk-link" href="Ann Mary George.pdf">A Symmetric Double Encryption Cryptography Algorithm using Complete Bipartite graphs</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">17:10–17:30</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Dr Priyanka Singh</td>
+  <td><a class="talk-link" href="Dr Priyanka Singh.pdf">Sombor Index and Its Variations for different Powers of Path Graphs</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Umang Jethva</td>
+  <td><a class="talk-link" href="Umang Jethva.pdf">Domination Number of the Commuting Graph and the Number of Centralizers of a Finite Group</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Vijayraj S. Kamble</td>
+  <td><a class="talk-link" href="Vijayraj S. Kamble.pdf">Edge Degree Zagreb Indices Of Graph Transformations And Its Applications</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Alaka Mohan</td>
+  <td><a class="talk-link" href="Alaka Mohan.pdf">On the Neighbourhood Matrices of Circulant Graphs</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Thara RJ</td>
+  <td><a class="talk-link" href="Thara RJ.pdf">The Influence of Girth and Degeneracy on Semitotal Dominating Set</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="5">17:30–17:50</td>
+  <td class="track-cell"><span class="track-label">Track A</span></td>
+  <td>Sanu C</td>
+  <td><a class="talk-link" href="Sanu C.pdf">Degree-Constrained Spanning and Steiner Trees on Structured Graph Classes</a></td>
+</tr>
+<tr class="row-trackB">
+  <td class="track-cell"><span class="track-label">Track B</span></td>
+  <td>Jyothish S</td>
+  <td><a class="talk-link" href="Jyothish S.pdf">Terminal Steiner tree problem: Complexity and Algorithms</a></td>
+</tr>
+<tr class="row-trackC">
+  <td class="track-cell"><span class="track-label">Track C</span></td>
+  <td>Chaadhanaa A</td>
+  <td><a class="talk-link" href="Chaadhanaa A.pdf">Multi-Decomposition of Complete Tripartite Graphs Into Trees of Order Five</a></td>
+</tr>
+<tr class="row-trackD">
+  <td class="track-cell"><span class="track-label">Track D</span></td>
+  <td>Karishma B</td>
+  <td><a class="talk-link" href="Karishma B.pdf">Bridging Uncertainty and Connectivity: IFSH Tree Models for Dynamic Fiber Cable Networks</a></td>
+</tr>
+<tr class="row-trackE">
+  <td class="track-cell"><span class="track-label">Track E</span></td>
+  <td>Dhanya Roy</td>
+  <td><a class="talk-link" href="Dhanya Roy.pdf">The vertex visibility number of graphs</a></td>
+</tr>
+
+<tr class="row-trackA">
+  <td class="time-rowspan" rowspan="3">17:50–18:10</td>
   <td class="track-cell"><span class="track-label">Track A</span></td>
   <td>Alin Sheba Mathew</td>
   <td><a class="talk-link" href="Alin Sheba Mathew.pdf">Italian Domination in Splitting Graph of a Graph</a></td>
@@ -607,180 +702,9 @@ header .venue {
   <td>Maurice</td>
   <td><a class="talk-link" href="Maurice.pdf">Local Distance Antimagic Labeling of Neighborhood Balanced Colored Graphs-2</a></td>
 </tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Balaji Rohidas Kadam</td>
-  <td><a class="talk-link" href="Balaji Rohidas Kadam.pdf">More Results on Modular Nim Game</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">15:50–16:10</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Soumyashree Rana</td>
-  <td><a class="talk-link" href="Soumyashree Rana.pdf">On the Complexity of Co-secure Dominating Set Problem</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Sini P</td>
-  <td><a class="talk-link" href="Sini P.pdf">The Aharoni-Korman Conjecture for Partially Semi-well Ordered Sets</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Vysakh C</td>
-  <td><a class="talk-link" href="Vysakh C.pdf">Eccentric Connectivity Index of Strongly Connected Digraphs</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Nithya Muraleedharan</td>
-  <td><a class="talk-link" href="Nithya Muraleedharan.pdf">Degree Restricted Domination in Complement Graphs</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">16:10–16:30</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Anuvinda J</td>
-  <td><a class="talk-link" href="Anuvinda J.pdf">Generalized Binomial Edge Ideals of Whisker Graphs via an Extension of Generalized Corona Products</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>John J Chavara</td>
-  <td><a class="talk-link" href="John J Chavara.pdf">Step systems of Ptolemaic graphs and Some of its subclasses</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Swathi D</td>
-  <td><a class="talk-link" href="Swathi D.pdf">Secure Domination in Bisplit Graphs - An Algorithmic Study</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Peer Abdul Manan</td>
-  <td><a class="talk-link" href="Peer Abdul Manan.pdf">Bounds for the trace norm of A<sub>α</sub> matrix of digraphs</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">16:30–16:50</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Carunya R</td>
-  <td><a class="talk-link" href="Carunya R.pdf">Bounds on Burning Number for Butterfly-Type Networks</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Prof. Madhavi Levaku</td>
-  <td><a class="talk-link" href="Prof. Madhavi Levaku.pdf">Idempotent Cayley Graph and its Basic Properties</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Shrinivas Neeralakeri</td>
-  <td><a class="talk-link" href="Shrinivas Neeralakeri.pdf">Sharp Bounds for the Elliptic Sombor Index of Four New Graph Operations</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Prashant Pandurang Waghmare</td>
-  <td><a class="talk-link" href="Prashant Pandurang Waghmare.pdf">Cohen-Macauleyness of the Zero-divisor Graph of a Boolean Poset</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">16:50–17:10</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Iswar Mahato</td>
-  <td><a class="talk-link" href="Iswar Mahato.pdf">Eigenvalue multiplicity and energy of distance and Seidel matrices of cographs</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Akankshya Sahu</td>
-  <td><a class="talk-link" href="Akankshya Sahu.pdf">Gallai's Path Decomposition of Cayley Graph of Finite Abelian Group</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Nalliah M</td>
-  <td><a class="talk-link" href="Nalliah M.pdf">Further results on Local Inclusive Distance Antimagic Chromatic number for some families of Graphs</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Priyanka Vishwakarma</td>
-  <td><a class="talk-link" href="Priyanka Vishwakarma.pdf">Exploring Symmetry-Breaking Parameters in Selected graph families</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">17:10–17:30</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Aswathi H</td>
-  <td><a class="talk-link" href="Aswathi H.pdf">On the Dynamic Colouring of Generalised Mycielskian of Some Graph Classes</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Akhila M S</td>
-  <td><a class="talk-link" href="Akhila M S.pdf">An Application to Zero-divisor Graphs in Quantam Mechanics</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Krishnadas K</td>
-  <td><a class="talk-link" href="Krishnadas K.pdf">Studies on various notions of ip-convexity on directed acyclic graphs and its relationship with directed graphs</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Meenalochani S</td>
-  <td><a class="talk-link" href="Meenalochani S.pdf">Hardness Results for Vertex-Edge Roman Domination in Graphs</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">17:30–17:50</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Ann Mary George</td>
-  <td><a class="talk-link" href="Ann Mary George.pdf">A Symmetric Double Encryption Cryptography Algorithm using Complete Bipartite graphs</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Dr Priyanka Singh</td>
-  <td><a class="talk-link" href="Dr Priyanka Singh.pdf">Sombor Index and Its Variations for different Powers of Path Graphs</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Umang Jethva</td>
-  <td><a class="talk-link" href="Umang Jethva.pdf">Domination Number of the Commuting Graph and the Number of Centralizers of a Finite Group</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Vijayraj S. Kamble</td>
-  <td><a class="talk-link" href="Vijayraj S. Kamble.pdf">Edge Degree Zagreb Indices Of Graph Transformations And Its Applications</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="4">17:50–18:10</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Alaka Mohan</td>
-  <td><a class="talk-link" href="Alaka Mohan.pdf">On the Neighbourhood Matrices of Circulant Graphs</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Thara RJ</td>
-  <td><a class="talk-link" href="Thara RJ.pdf">The Influence of Girth and Degeneracy on Semitotal Dominating Set</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Sanu C</td>
-  <td><a class="talk-link" href="Sanu C.pdf">Degree-Constrained Spanning and Steiner Trees on Structured Graph Classes</a></td>
-</tr>
-<tr class="row-trackD">
-  <td class="track-cell"><span class="track-label">Track D</span></td>
-  <td>Jyothish S</td>
-  <td><a class="talk-link" href="Jyothish S.pdf">Terminal Steiner tree problem: Complexity and Algorithms</a></td>
-</tr>
-<tr class="row-trackA">
-  <td class="time-rowspan" rowspan="3">18:10–18:30</td>
-  <td class="track-cell"><span class="track-label">Track A</span></td>
-  <td>Chaadhanaa A</td>
-  <td><a class="talk-link" href="Chaadhanaa A.pdf">Multi-Decomposition of Complete Tripartite Graphs Into Trees of Order Five</a></td>
-</tr>
-<tr class="row-trackB">
-  <td class="track-cell"><span class="track-label">Track B</span></td>
-  <td>Karishma B</td>
-  <td><a class="talk-link" href="Karishma B.pdf">Bridging Uncertainty and Connectivity: IFSH Tree Models for Dynamic Fiber Cable Networks</a></td>
-</tr>
-<tr class="row-trackC">
-  <td class="track-cell"><span class="track-label">Track C</span></td>
-  <td>Dhanya Roy</td>
-  <td><a class="talk-link" href="Dhanya Roy.pdf">The vertex visibility number of graphs</a></td>
-</tr>
 
 <tr class="row-break"><td colspan="4">— ADMA GBM —</td></tr>
 
-  <tr><td></td></tr>
-    <tr><td>* * *</td></tr>
-  <tr><td></td></tr>
 <!-- ==================== DAY 4 ==================== -->
 <tr class="row-day"><td colspan="4">Day 4</td></tr>
 
